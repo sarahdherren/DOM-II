@@ -2,21 +2,49 @@
 const nav = document.querySelector('.nav');
 nav.addEventListener('mouseover', (e) => {
     e.target.style.fontSize = '1.8rem';
+    
 });
 nav.addEventListener('mouseout', (e) => {
     e.target.removeAttribute('style');
 });
 
-const header = document.querySelector('h1');
-header.addEventListener('dblclick', (e) => {
-    e.target.style.backgroundColor = "black";
+const navLink = document.querySelectorAll('.nav-link');
+navLink.forEach(e => {
+    e.addEventListener('click', (e) => {
+        e.preventDefault();
+    })
+    });
+
+const header = document.querySelector('.nav');
+header.addEventListener('click', (e) => {
+    e.target.style.backgroundColor = "#1D726D";
     e.target.style.color = "white";
-});
+    });
+
 header.addEventListener('mouseleave', (e) => {
     e.target.removeAttribute('style');
 });
 
+const h1 = document.querySelector('.nav-container .logo-heading');
+h1.addEventListener('click', (e) => {
+    e.target.style.backgroundColor = 'white';
+    e.target.style.color = '#1D726D';
+})
+h1.addEventListener('mouseleave', (e) => {
+    e.target.removeAttribute('style');
+});
 
+
+
+const funBus = document.querySelector('img');
+funBus.addEventListener('click', (e) => {
+    console.log("funBus!");
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    const flashColor = `rgb(${r}, ${g}, ${b})`;
+    document.body.style.backgroundColor = flashColor;
+})//code credit to Colt Steele 
 
 const body = document.querySelector('body');
 body.addEventListener('mouseenter', (e) => {
@@ -25,16 +53,7 @@ body.addEventListener('mouseenter', (e) => {
 const btn = document.querySelectorAll('.btn');
 const destination = document.querySelectorAll('.destination');
 
-// destination.addEventListener('mouseenter', (e) => {
-//     e.target.style.backgroundColor = "#1D726D";
-//     e.target.style.color = "white";
-//     btn.style.backgroundColor = "white";
-//     btn.style.color = "#1D726D";
-// });
 
-// destination.addEventListener('mouseleave', (e) => {
-//     e.target.removeAttribute('style');
-// });
 destination.forEach(e => {
 e.addEventListener('mouseenter', colorSwap);
 });
@@ -66,6 +85,3 @@ function colorSwap(e) {
     }
 };
 
-// function colorReverse(e) {
-//     e.removeAttribute('style');
-// };
