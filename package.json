@@ -20,6 +20,5 @@
     "eslint": "^7.18.0",
     "less": "^3.13.1",
     "parcel-bundler": "^1.12.4"
-  },
-  "dependencies": {}
+  }
 }
